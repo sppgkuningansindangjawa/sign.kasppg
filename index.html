@@ -1,0 +1,889 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071e49">
+<title>Identitas Tanda Tangan Digital | SPPG</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --navy: #071e49;
+    --navy2: #12366c;
+    --gold: #d9b76e;
+    --blue: #2861e8;
+    --text: #19253a;
+    --muted: #738096;
+    --border: #e7ebf2;
+    --surface: #f5f7fb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: linear-gradient(135deg, #245ce1, #347cf1);
+    min-height: 100vh;
+    padding: 22px;
+}
+
+/* HALAMAN UTAMA */
+
+.page {
+    max-width: 900px;
+    min-height: calc(100vh - 44px);
+    margin: auto;
+    background: #fff;
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(4, 20, 57, .18);
+}
+
+/* HEADER */
+
+.header {
+    position: relative;
+    overflow: hidden;
+    padding: 32px 38px 48px;
+    color: white;
+    background: linear-gradient(125deg, #071e49, #12366c 70%, #1b4b86);
+}
+
+.header::before,
+.header::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.09);
+    pointer-events: none;
+}
+
+.header::before {
+    width: 320px;
+    height: 320px;
+    right: -95px;
+    top: -210px;
+    box-shadow: 0 0 0 35px rgba(255,255,255,.025),
+                0 0 0 70px rgba(255,255,255,.02);
+}
+
+.header::after {
+    width: 180px;
+    height: 180px;
+    right: 120px;
+    bottom: -150px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-icon {
+    width: 49px;
+    height: 49px;
+    border: 1px solid rgba(217,183,110,.65);
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    background: rgba(255,255,255,.07);
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.brand-icon svg {
+    width: 27px;
+    height: 27px;
+}
+
+.brand-name {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 800;
+    letter-spacing: .4px;
+}
+
+.brand-caption {
+    font-size: 10px;
+    color: #c0cee2;
+    margin-top: 2px;
+}
+
+.header-content {
+    margin-top: 38px;
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 13px;
+}
+
+.header h1 {
+    font-size: clamp(24px, 4vw, 36px);
+    line-height: 1.3;
+    letter-spacing: -1px;
+    max-width: 560px;
+}
+
+.header-description {
+    margin-top: 12px;
+    color: #cfdaea;
+    font-size: 13px;
+    line-height: 1.9;
+    max-width: 510px;
+}
+
+/* KONTEN */
+
+.content {
+    padding: 0 34px 35px;
+    margin-top: -23px;
+    position: relative;
+    z-index: 2;
+}
+
+.section-label {
+    color: #8a96a8;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    margin: 28px 0 14px;
+}
+
+/* IDENTITAS KEPALA SPPG */
+
+.identity-card {
+    display: grid;
+    grid-template-columns: 175px minmax(0, 1fr);
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(16, 39, 80, .07);
+}
+
+.identity-aside {
+    background: linear-gradient(155deg, #edf3fc, #e4ebf7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px 15px;
+    border-right: 1px solid #e1e8f4;
+}
+
+.avatar {
+    width: 91px;
+    height: 91px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(145deg, #071e49, #1c4a89);
+    border: 5px solid white;
+    box-shadow: 0 5px 20px rgba(7,30,73,.14);
+    color: white;
+}
+
+.avatar svg {
+    width: 43px;
+    height: 43px;
+}
+
+.aside-caption {
+    margin-top: 17px;
+    color: var(--navy);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+.aside-line {
+    width: 34px;
+    height: 3px;
+    border-radius: 10px;
+    background: var(--gold);
+    margin-top: 12px;
+}
+
+.identity-main {
+    padding: 27px 28px;
+    min-width: 0;
+}
+
+.identity-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.identity-label {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #edf7f1;
+    color: #27764e;
+    padding: 7px 10px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #36a36c;
+}
+
+.person-name {
+    margin-top: 17px;
+    font-size: clamp(20px, 3vw, 27px);
+    line-height: 1.4;
+    letter-spacing: -.6px;
+    color: var(--navy);
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+.position {
+    margin-top: 7px;
+    color: #596981;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.identity-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 23px 0;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 20px;
+}
+
+.info-label {
+    color: var(--muted);
+    font-size: 10px;
+    margin-bottom: 8px;
+}
+
+.info-value {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* INFORMASI DOKUMEN */
+
+.document-card {
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+}
+
+.document-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 21px 23px;
+    background: #f9fafd;
+    border-bottom: 1px solid var(--border);
+}
+
+.document-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 13px;
+    display: grid;
+    place-items: center;
+    background: #eaf0fb;
+    color: var(--navy);
+    flex-shrink: 0;
+}
+
+.document-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.document-heading {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+.document-subheading {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 3px;
+}
+
+.document-body {
+    padding: 23px;
+}
+
+.document-label {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.document-title {
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.7;
+    color: var(--navy);
+    overflow-wrap: anywhere;
+}
+
+.document-description {
+    color: #68768b;
+    font-size: 12px;
+    line-height: 1.9;
+    margin-top: 8px;
+    overflow-wrap: anywhere;
+}
+
+.document-meta {
+    margin-top: 22px;
+    padding-top: 19px;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.meta-label {
+    color: var(--muted);
+    font-size: 10px;
+    margin-bottom: 8px;
+}
+
+.meta-value {
+    font-size: 12px;
+    line-height: 1.8;
+    font-weight: 700;
+}
+
+/* TANGGAL TANDA TANGAN */
+
+.signature-card {
+    margin-top: 23px;
+    padding: 24px;
+    border-radius: 20px;
+    color: white;
+    background: linear-gradient(120deg, #071e49, #12366c);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.signature-card::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 50%;
+    right: -70px;
+    bottom: -120px;
+    box-shadow: 0 0 0 25px rgba(255,255,255,.025);
+}
+
+.signature-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.calendar-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.12);
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.calendar-icon svg {
+    width: 27px;
+    height: 27px;
+}
+
+.signature-label {
+    font-size: 10px;
+    color: #c6d4e8;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.signature-date {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.7;
+    margin-top: 7px;
+}
+
+.signature-note {
+    font-size: 10px;
+    color: #c6d4e8;
+    line-height: 1.8;
+    margin-top: 5px;
+}
+
+.signature-badge {
+    border: 1px solid rgba(217,183,110,.55);
+    color: var(--gold);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 10px;
+    line-height: 1.7;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    z-index: 1;
+}
+
+/* FOOTER */
+
+.footer {
+    margin-top: 33px;
+    border-top: 1px solid var(--border);
+    padding-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    color: #8a96a8;
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+.footer strong {
+    color: var(--navy);
+}
+
+.footer-mark {
+    color: var(--navy);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+    body {
+        padding: 0;
+        background: #fff;
+    }
+
+    .page {
+        min-height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .header {
+        padding: 25px 22px 43px;
+    }
+
+    .brand-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .brand-name {
+        font-size: 12px;
+    }
+
+    .brand-caption {
+        font-size: 9px;
+    }
+
+    .header-content {
+        margin-top: 33px;
+    }
+
+    .header h1 {
+        font-size: 27px;
+    }
+
+    .header-description {
+        font-size: 12px;
+    }
+
+    .content {
+        padding: 0 15px 25px;
+        margin-top: -20px;
+    }
+
+    .section-label {
+        margin-top: 24px;
+    }
+
+    .identity-card {
+        grid-template-columns: 1fr;
+        border-radius: 19px;
+    }
+
+    .identity-aside {
+        padding: 21px 15px;
+        border-right: 0;
+        border-bottom: 1px solid #e1e8f4;
+    }
+
+    .avatar {
+        width: 76px;
+        height: 76px;
+    }
+
+    .avatar svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .aside-caption {
+        margin-top: 10px;
+    }
+
+    .aside-line {
+        margin-top: 8px;
+    }
+
+    .identity-main {
+        padding: 22px 19px;
+    }
+
+    .person-name {
+        font-size: 23px;
+    }
+
+    .info-grid {
+        gap: 20px 12px;
+    }
+
+    .info-value {
+        font-size: 12px;
+    }
+
+    .document-header {
+        padding: 18px;
+    }
+
+    .document-body {
+        padding: 19px;
+    }
+
+    .document-title {
+        font-size: 15px;
+    }
+
+    .document-meta {
+        gap: 15px;
+    }
+
+    .signature-card {
+        padding: 20px 17px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .signature-date {
+        font-size: 13px;
+    }
+
+    .signature-badge {
+        margin-left: 67px;
+    }
+
+    .footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+
+    body {
+        background: white;
+        padding: 0;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .page {
+        max-width: none;
+        min-height: auto;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .content {
+        padding: 0 15px 20px;
+    }
+
+    .identity-card,
+    .document-card,
+    .signature-card {
+        break-inside: avoid;
+        box-shadow: none;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+    <header class="header">
+        <div class="brand">
+            <div class="brand-icon">
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="1.7">
+                    <path d="M12 2 4 5v6c0 5.2 3.4 9 8 11 4.6-2 8-5.8 8-11V5l-8-3Z"/>
+                    <path d="m8.5 12 2.2 2.2 4.8-5"/>
+                </svg>
+            </div>
+            <div>
+                <div class="brand-name">
+                    SPPG KUNINGAN<br>CIBINGBIN SINDANGJAWA
+                </div>
+                <div class="brand-caption">
+                    INFORMASI IDENTITAS DIGITAL
+                </div>
+            </div>
+        </div>
+
+        <div class="header-content">
+            <div class="eyebrow">Dokumen & Administrasi</div>
+            <h1>Informasi Penanda Tangan Digital</h1>
+            <p class="header-description">
+                Informasi identitas Kepala SPPG dan keterangan
+                dokumen yang ditandatangani untuk kebutuhan
+                administrasi SPPG Kuningan Cibingbin Sindangjawa.
+            </p>
+        </div>
+    </header>
+
+    <main class="content">
+
+        <div class="section-label">01 — Identitas Penanda Tangan</div>
+
+        <section class="identity-card">
+            <div class="identity-aside">
+                <div class="avatar">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <circle cx="12" cy="7" r="4"/>
+                        <path d="M4 21v-2a8 8 0 0 1 16 0v2H4Z"/>
+                    </svg>
+                </div>
+                <div class="aside-caption">
+                    IDENTITAS RESMI<br>KEPALA SPPG
+                </div>
+                <div class="aside-line"></div>
+            </div>
+
+            <div class="identity-main">
+                <div class="identity-top">
+                    <div class="identity-label">Data penanda tangan</div>
+                    <div class="status">
+                        <span class="status-dot"></span>
+                        Informasi Identitas
+                    </div>
+                </div>
+
+                <!-- Ganti dengan data Kepala SPPG yang sebenarnya -->
+                <h2 class="person-name" id="nama">
+                    Nama Lengkap Kepala SPPG
+                </h2>
+
+                <p class="position" id="jabatan">
+                    Kepala Satuan Pelayanan Pemenuhan Gizi
+                </p>
+
+                <div class="identity-divider"></div>
+
+                <div class="info-grid">
+                    <div>
+                        <div class="info-label">Nomor Induk Pegawai (NIP)</div>
+                        <div class="info-value" id="nip">
+                            Belum dicantumkan
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="info-label">Jabatan</div>
+                        <div class="info-value" id="jabatanDetail">
+                            Kepala SPPG
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="info-label">Unit Kerja</div>
+                        <div class="info-value">
+                            SPPG Kuningan Cibingbin Sindangjawa
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="info-label">Instansi</div>
+                        <div class="info-value" id="instansi">
+                            Satuan Pelayanan Pemenuhan Gizi
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-label">02 — Informasi Dokumen</div>
+
+        <section class="document-card">
+            <div class="document-header">
+                <div class="document-icon">
+                    <svg viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.7">
+                        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"/>
+                        <path d="M13 2v7h7M8 13h8M8 17h8"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="document-heading">
+                        Keterangan Dokumen yang Ditandatangani
+                    </div>
+                    <div class="document-subheading">
+                        Informasi naskah atau dokumen administrasi
+                    </div>
+                </div>
+            </div>
+
+            <div class="document-body">
+                <div class="document-label">Nama / Perihal Dokumen</div>
+
+                <!-- Ganti dengan nama dokumen sebenarnya -->
+                <div class="document-title" id="dokumen">
+                    Nama Dokumen yang Ditandatangani
+                </div>
+
+                <p class="document-description" id="keterangan">
+                    Keterangan mengenai dokumen dapat dicantumkan
+                    di bagian ini sesuai kebutuhan administrasi.
+                </p>
+
+                <div class="document-meta">
+                    <div>
+                        <div class="meta-label">Nomor Dokumen</div>
+                        <div class="meta-value" id="nomorDokumen">
+                            Tidak dicantumkan
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="meta-label">Tanggal Dokumen</div>
+                        <div class="meta-value" id="tanggalDokumen">
+                            Belum ditentukan
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-label">03 — Waktu Penandatanganan</div>
+
+        <section class="signature-card">
+            <div class="signature-left">
+                <div class="calendar-icon">
+                    <svg viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.7">
+                        <rect x="3" y="5" width="18" height="16" rx="2"/>
+                        <path d="M16 3v4M8 3v4M3 10h18"/>
+                        <path d="m9 15 2 2 4-4"/>
+                    </svg>
+                </div>
+
+                <div>
+                    <div class="signature-label">
+                        Ditandatangani pada
+                    </div>
+                    <div class="signature-date" id="tanggalTtd">
+                        Belum ditentukan
+                    </div>
+                    <div class="signature-note">
+                        SPPG Kuningan Cibingbin Sindangjawa
+                    </div>
+                </div>
+            </div>
+
+            <div class="signature-badge">
+                INFORMASI<br>PENANDA TANGAN
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div>
+                <strong>SPPG Kuningan Cibingbin Sindangjawa</strong>
+                <br>Informasi identitas dan dokumen administrasi.
+            </div>
+            <div class="footer-mark">SPPG DIGITAL</div>
+        </footer>
+
+    </main>
+</div>
+</body>
+</html>
